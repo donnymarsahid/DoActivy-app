@@ -2,35 +2,27 @@ import React from 'react'
 import { View, Text, StyleSheet, TextInput, Pressable, Image } from 'react-native'
 import ButtonStyle1 from '../../assets/button/ButtonStyle-1'
 
-const Login = ({ navigation }) => {
-    const navigateRegister = () => navigation.navigate("Register")
-    const navigateForgotPassword = () => navigation.navigate("ForgotPassword")
+const Add = () => {
+
     return (
         <View style={Style.container}>
-            <Text style={[Style.fontTextMedium, { fontSize: 32, textAlign: 'center' }]}>
-                Login
-            </Text>
             <View style={Style.formInput}>
                 <View>
-                    <Text style={Style.textLabel}>Username</Text>
+                    <Text style={Style.textLabel}>Activity</Text>
                     <TextInput style={Style.textInput} />
                 </View>
                 <View style={{ marginTop: 20 }}>
-                    <Text style={Style.textLabel}>Password</Text>
+                    <Text style={Style.textLabel}>Date</Text>
                     <TextInput style={Style.textInput} />
                 </View>
-                <View style={Style.forgotPassword}>
-                    <Pressable><Text style={Style.fontReguler} onPress={navigateForgotPassword}>Forgot Password?</Text></Pressable>
+                <View style={{ marginTop: 20 }}>
+                    <Text style={Style.textLabel}>Time</Text>
+                    <TextInput style={Style.textInput} />
                 </View>
             </View>
             <View style={{ marginTop: 120 }}>
-                <ButtonStyle1 title="LOGIN" />
+                <ButtonStyle1 title="ADD ACTIVITY" />
             </View>
-            <View style={Style.noAccount}>
-                <Text style={Style.fontReguler}>Don't have account? </Text>
-                <Pressable><Text style={Style.fontBold} onPress={navigateRegister}> Register</Text></Pressable>
-            </View>
-            <Pressable onPress={() => navigation.navigate("Home")}><Text>tes</Text></Pressable>
         </View>
     )
 }
@@ -87,4 +79,4 @@ const Style = StyleSheet.create({
 })
 
 
-export default Login
+export default Add
